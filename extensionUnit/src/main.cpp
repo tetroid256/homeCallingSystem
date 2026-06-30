@@ -45,9 +45,15 @@ void callback(char* topic, byte* payload, unsigned int length) {
     // メッセージが「RING」ならブザー鳴動（今回は1秒点灯でテスト）
     if (message == "RING") {
         Serial.println("🔔 通知を受信！ブザーを鳴らします。");
-        digitalWrite(BUZZER_PIN, HIGH);
-        delay(1000);
-        digitalWrite(BUZZER_PIN, LOW);
+tone(BUZZER_PIN, 2000); 
+        delay(500);              // 0.5秒間鳴らす
+        noTone(BUZZER_PIN);      // 音を止める
+        
+        delay(100);              // 少し間隔をあける
+        
+        tone(BUZZER_PIN, 2000); 
+        delay(500);              // もう一回0.5秒間鳴らす
+        noTone(BUZZER_PIN);
     }
 }
 

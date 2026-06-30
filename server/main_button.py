@@ -5,7 +5,7 @@ from my_module.mqtt_notifier import send_ring_notice
 
 # GPIO 24番ピンをボタン入力として定義（内部プルアップ有効）
 BUTTON_PIN = 24
-button = Button(BUTTON_PIN)
+button = Button(BUTTON_PIN, pull_up=False)
 
 def on_button_pressed():
     """

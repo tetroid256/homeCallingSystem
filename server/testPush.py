@@ -1,5 +1,6 @@
 import time
 import paho.mqtt.client as mqtt
+from paho.mqtt.enums import CallbackAPIVersion
 
 # 【設定】ラズパイ自身のIP（localhostでも可）
 MQTT_SERVER = "broker.hivemq.com" 
@@ -7,7 +8,7 @@ MQTT_TOPIC = "tetroid/house/room1/notice"
 
 def main():
     # MQTTクライアントの初期化
-    client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
+    client = mqtt.Client(CallbackAPIVersion.VERSION2)
     
     print(f"MQTTブローカー（{MQTT_SERVER}）に接続中...")
     client.connect(MQTT_SERVER, 1883, 60)

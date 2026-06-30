@@ -5,7 +5,7 @@
 
 // ブザー（または内蔵LED）のピン番号
 // ※画像から見るとXiao ESP32-C6等の最新ボードのようです。内蔵LEDピンやGPIOピンを指定してください。
-const int BUZZER_PIN = 2; 
+const int BUZZER_PIN = D2; 
 
 WiFiClient espClient;
 PubSubClient client(espClient);

@@ -2,8 +2,8 @@ import time
 import paho.mqtt.client as mqtt
 
 # 【設定】ラズパイ自身のIP（localhostでも可）
-MQTT_SERVER = "localhost" 
-MQTT_TOPIC = "house/room1/notice"
+MQTT_SERVER = "broker.hivemq.com" 
+MQTT_TOPIC = "tetroid/house/room1/notice"
 
 def main():
     # MQTTクライアントの初期化
